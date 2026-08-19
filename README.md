@@ -1,443 +1,654 @@
-# 📊 Executive Business Intelligence Dashboard
-
-### 🚀 Retail Sales • Inventory Intelligence • Product Performance • Executive Decision Making
+# 🚀 Executive Business Intelligence Dashboard
 
 <p align="center">
 
-**Turning Retail Data into Actionable Business Decisions**
+# 📊 Retail Intelligence | Inventory Risk | Sales Analytics | Executive Decisions
+
+### ✨ Turning Raw Retail Data into Actionable Business Intelligence ✨
 
 </p>
 
 ---
 
-## 🌟 Project Overview
+## 🌟 Project at a Glance
 
-The **Executive Business Intelligence Dashboard** is an interactive data analytics solution designed to help retail managers and business executives understand **sales performance, inventory efficiency, product profitability, stock risk, and overall business performance** from a single executive view.
+<p align="center">
 
-Retail organizations generate large volumes of sales and inventory data, but decision-makers often struggle to answer important questions quickly:
+**RAW DATA**
+⬇️
+🧹 **DATA CLEANING**
+⬇️
+🗄️ **MYSQL DATABASE**
+⬇️
+📐 **STATISTICAL ANALYSIS**
+⬇️
+📊 **POWER BI**
+⬇️
+🎯 **EXECUTIVE DECISIONS**
 
-> 💡 Which products generate the most revenue?
-> 📦 Which products have excessive inventory?
-> ⚠️ Which products are at risk of stockout?
-> 💰 Where is profit being generated or lost?
-> 🏪 Which stores or regions are underperforming?
-> 📈 Which products should be reordered, promoted, reduced, or discontinued?
+</p>
 
-This project transforms raw retail data into **interactive business intelligence insights** using **Excel, SQL, Statistics, and Power BI**.
+> 💡 **The goal is simple:** Transform complex retail data into clear insights that help managers decide **what to sell, what to reorder, what to promote, what to reduce, and where the business is losing money.**
 
 ---
 
-## 🎯 Business Problem
+# 🎬 Dashboard Preview
 
-Traditional retail reports usually focus on individual metrics such as sales quantity or revenue.
+> 📌 Add your Power BI dashboard GIF/image inside the `screenshots` folder.
 
-However, executives need a **combined view of sales + inventory + profitability + product performance + business risk** to make faster and more informed decisions.
+```text
+screenshots/
+│
+├── dashboard-demo.gif
+├── executive-overview.png
+├── sales-analysis.png
+├── inventory-risk.png
+└── product-performance.png
+```
 
-### The key challenge is:
+Once uploaded, add:
 
-**How can retail businesses identify revenue opportunities, inventory risks, underperforming products, and business performance gaps using data-driven insights?**
+```markdown
+<p align="center">
+<img src="screenshots/dashboard-demo.gif" width="950">
+</p>
+```
 
-This dashboard provides a centralized solution for answering these questions.
+This creates an animated dashboard preview at the top of your GitHub README.
+
+---
+
+# 🧠 Business Problem
+
+Retail companies generate large amounts of **sales, product, inventory, store, and category data**.
+
+However, raw data alone does not answer the questions executives actually need:
+
+```text
+❓ What are our best-selling products?
+❓ Which products generate the most profit?
+❓ Which products have too much inventory?
+❓ Which products may face stockouts?
+❓ Which stores are underperforming?
+❓ Which categories drive revenue?
+❓ Where is inventory capital getting blocked?
+❓ Where are we potentially losing revenue?
+❓ What action should management take?
+```
+
+### 🎯 Proposed Solution
+
+The **Executive Business Intelligence Dashboard** combines:
+
+**Sales + Inventory + Products + Stores + Categories + Time**
+
+into a centralized analytical solution.
 
 ---
 
 # 🎯 Project Objectives
 
-The main objectives of this project are:
+### 📈 Sales Intelligence
 
-* 📈 Analyze overall retail sales performance
-* 💰 Identify high-revenue and high-profit products
-* 📦 Monitor inventory levels and inventory efficiency
-* ⚠️ Detect products with stockout and overstock risks
-* 🏷️ Identify slow-moving products
-* 🏪 Compare store and regional performance
-* 📊 Analyze category-level performance
-* 💵 Identify potential revenue loss
-* 🔄 Measure inventory turnover
-* 🎯 Support reorder, promotion, and stock-reduction decisions
-* 👔 Provide executives with a single decision-making dashboard
+* Analyze revenue trends
+* Identify top-selling products
+* Compare store performance
+* Analyze category contribution
 
----
+### 📦 Inventory Intelligence
 
-# 🧩 Key Business Questions
+* Identify overstock products
+* Detect stockout risks
+* Analyze slow-moving inventory
+* Measure inventory value
+* Calculate inventory turnover
 
-The dashboard is designed to answer the following questions:
+### 💰 Profitability Intelligence
 
-| Business Question                                     | Insight Provided          |
-| ----------------------------------------------------- | ------------------------- |
-| 💰 Which products generate the highest revenue?       | Top Revenue Products      |
-| 📈 Which products generate the highest profit?        | Profitability Analysis    |
-| 📦 Which products have excess inventory?              | Overstock Risk            |
-| ⚠️ Which products may run out of stock?               | Stockout Risk             |
-| 🐌 Which products are slow-moving?                    | Inventory Efficiency      |
-| 🏪 Which stores perform best?                         | Store Performance         |
-| 🌍 Which regions are underperforming?                 | Regional Analysis         |
-| 🏷️ Which categories contribute most to revenue?      | Category Performance      |
-| 🔄 How efficiently is inventory converted into sales? | Inventory Turnover        |
-| 💸 Where is potential revenue being lost?             | Revenue Risk              |
-| 🎯 Which products need action?                        | Executive Recommendations |
+* Identify high-profit products
+* Analyze profit margins
+* Compare revenue vs profit
+* Detect low-profit products
+
+### 🏢 Executive Intelligence
+
+* Identify business risks
+* Detect revenue opportunities
+* Compare regions/stores
+* Support reorder decisions
+* Support promotion decisions
+* Support inventory reduction decisions
 
 ---
 
-# 🏗️ Project Architecture
+# 🏗️ Complete Data Architecture
+
+The project follows a structured relational data model.
 
 ```text
-                    ┌─────────────────────┐
-                    │     Raw Retail Data │
-                    │   Sales + Inventory │
-                    └──────────┬──────────┘
-                               │
-                               ▼
-                    ┌─────────────────────┐
-                    │   Excel Data        │
-                    │ Cleaning & Validation│
-                    └──────────┬──────────┘
-                               │
-                               ▼
-                    ┌─────────────────────┐
-                    │      MySQL          │
-                    │ Data Storage & SQL  │
-                    │     Analysis        │
-                    └──────────┬──────────┘
-                               │
-                               ▼
-                    ┌─────────────────────┐
-                    │ Statistical         │
-                    │ Analysis & KPIs     │
-                    └──────────┬──────────┘
-                               │
-                               ▼
-                    ┌─────────────────────┐
-                    │      Power BI       │
-                    │ Data Modeling &     │
-                    │ Visualization       │
-                    └──────────┬──────────┘
-                               │
-                               ▼
-                    ┌─────────────────────┐
-                    │ Executive Dashboard │
-                    │ Decision Making     │
-                    └─────────────────────┘
+                         ┌──────────────────┐
+                         │    DIM_DATE      │
+                         │──────────────────│
+                         │ Date_ID (PK)     │
+                         │ Date             │
+                         │ Month            │
+                         │ Quarter          │
+                         │ Year             │
+                         └────────┬─────────┘
+                                  │
+                                  │ 1 : Many
+                                  ▼
+┌──────────────────┐       ┌──────────────────┐
+│   DIM_PRODUCT    │       │    FACT_SALES    │
+│──────────────────│       │──────────────────│
+│ Product_ID (PK)  │──────<│ Product_ID (FK) │
+│ Product_Name     │  1:M  │ Store_ID (FK)   │
+│ Category_ID (FK) │       │ Date_ID (FK)    │
+│ Unit_Cost        │       │ Quantity         │
+│ Selling_Price    │       │ Revenue          │
+└────────┬─────────┘       │ Profit           │
+         │                 └────────┬─────────┘
+         │ 1:M                      │
+         ▼                          │
+┌──────────────────┐                │
+│   DIM_CATEGORY   │                │
+│──────────────────│                │
+│ Category_ID (PK) │                │
+│ Category_Name    │                │
+└──────────────────┘                │
+                                    │
+                                    │ M:1
+                                    ▼
+                           ┌──────────────────┐
+                           │    DIM_STORE     │
+                           │──────────────────│
+                           │ Store_ID (PK)    │
+                           │ Store_Name       │
+                           │ Region_ID (FK)   │
+                           │ Location         │
+                           └────────┬─────────┘
+                                    │
+                                    │ M:1
+                                    ▼
+                           ┌──────────────────┐
+                           │   DIM_REGION     │
+                           │──────────────────│
+                           │ Region_ID (PK)   │
+                           │ Region_Name      │
+                           └──────────────────┘
+
+
+┌──────────────────┐
+│ FACT_INVENTORY   │
+│──────────────────│
+│ Inventory_ID PK  │
+│ Product_ID FK    │──────> DIM_PRODUCT
+│ Store_ID FK      │──────> DIM_STORE
+│ Date_ID FK       │──────> DIM_DATE
+│ Stock_Quantity   │
+│ Reorder_Level    │
+│ Inventory_Value  │
+└──────────────────┘
+```
+
+---
+
+# 🔗 Table Relationships
+
+The database follows a **Star Schema / Dimensional Modeling approach**.
+
+| Parent Table   | Child Table      | Relationship | Key         |
+| -------------- | ---------------- | ------------ | ----------- |
+| `DIM_PRODUCT`  | `FACT_SALES`     | 1 : Many     | Product_ID  |
+| `DIM_PRODUCT`  | `FACT_INVENTORY` | 1 : Many     | Product_ID  |
+| `DIM_CATEGORY` | `DIM_PRODUCT`    | 1 : Many     | Category_ID |
+| `DIM_STORE`    | `FACT_SALES`     | 1 : Many     | Store_ID    |
+| `DIM_STORE`    | `FACT_INVENTORY` | 1 : Many     | Store_ID    |
+| `DIM_REGION`   | `DIM_STORE`      | 1 : Many     | Region_ID   |
+| `DIM_DATE`     | `FACT_SALES`     | 1 : Many     | Date_ID     |
+| `DIM_DATE`     | `FACT_INVENTORY` | 1 : Many     | Date_ID     |
+
+### 🔑 Primary Key
+
+A **Primary Key (PK)** uniquely identifies each record.
+
+Example:
+
+```text
+DIM_PRODUCT
+Product_ID = P001
+Product_ID = P002
+Product_ID = P003
+```
+
+### 🔗 Foreign Key
+
+A **Foreign Key (FK)** connects one table with another.
+
+Example:
+
+```text
+FACT_SALES.Product_ID
+            ↓
+DIM_PRODUCT.Product_ID
+```
+
+This allows us to answer:
+
+> "How much revenue did each product generate?"
+
+---
+
+# 🧩 Entity Relationship Model
+
+The conceptual relationship can be represented as:
+
+```text
+                    CATEGORY
+                       │
+                       │ 1
+                       │
+                       ▼
+                    PRODUCT
+                 ┌─────┴─────┐
+                 │           │
+                 │ 1         │ 1
+                 ▼           ▼
+              SALES      INVENTORY
+                 │           │
+                 │ M         │ M
+                 ▼           ▼
+               STORE ◄───────┘
+                 │
+                 │ M
+                 ▼
+               REGION
+
+DATE ───────────► SALES
+DATE ───────────► INVENTORY
+```
+
+---
+
+# ⭐ Why This Relationship Model?
+
+The relational structure prevents unnecessary duplication and makes analysis easier.
+
+### Example:
+
+Instead of storing:
+
+```text
+Product Name
+Category Name
+Store Name
+Region Name
+Date
+Revenue
+Profit
+```
+
+repeatedly inside every transaction, the model separates the information into appropriate tables.
+
+This provides:
+
+✅ Better data organization
+✅ Reduced redundancy
+✅ Easier SQL analysis
+✅ Better Power BI performance
+✅ Cleaner relationships
+✅ Easier filtering
+✅ Scalable business intelligence
+
+---
+
+# 🔄 End-to-End Data Flow
+
+```text
+        📁 RAW RETAIL DATA
+                 │
+                 ▼
+        🧹 DATA CLEANING
+                 │
+                 ▼
+        📊 EXCEL VALIDATION
+                 │
+                 ▼
+        🗄️ MYSQL DATABASE
+                 │
+        ┌────────┴────────┐
+        ▼                 ▼
+   SQL ANALYSIS      STATISTICS
+        │                 │
+        └────────┬────────┘
+                 ▼
+          🔄 POWER QUERY
+                 │
+                 ▼
+        🧩 DATA MODELING
+                 │
+                 ▼
+              DAX
+                 │
+                 ▼
+       📊 POWER BI DASHBOARD
+                 │
+                 ▼
+       🎯 BUSINESS INSIGHTS
+                 │
+                 ▼
+       👔 EXECUTIVE DECISION
 ```
 
 ---
 
 # 🛠️ Technology Stack
 
-### 📊 Data Preparation
+<p align="center">
 
-* Microsoft Excel
-* Data Cleaning
-* Data Validation
-* Missing Value Handling
-* Duplicate Detection
+📊 **Microsoft Excel**
+  → Data Cleaning & Validation
 
-### 🗄️ Database
+🗄️ **MySQL**
+  → Database & SQL Analysis
 
-* MySQL
-* SQL Queries
-* Aggregations
-* Joins
-* Subqueries
-* CTEs
-* Business KPI calculations
+📐 **Statistics**
+  → Business & Performance Analysis
 
-### 📐 Statistics
+📈 **Power BI**
+  → Data Modeling & Visualization
 
-* Descriptive Statistics
-* Mean
-* Median
-* Standard Deviation
-* Trend Analysis
-* Correlation Analysis
-* Performance comparison
+</p>
 
-### 📈 Business Intelligence
+### Core Technologies
 
-* Microsoft Power BI
-* Power Query
-* DAX
-* Data Modeling
-* Interactive Visualizations
-* KPI Cards
-* Drill-through
-* Slicers
-* Conditional Formatting
+```text
+Excel
+SQL
+MySQL
+Power Query
+DAX
+Power BI
+Statistics
+Data Visualization
+Business Intelligence
+```
 
 ---
 
-# 📊 Dashboard Structure
-
-The project contains multiple interactive dashboard pages designed for different business needs.
+# 📊 Power BI Dashboard Pages
 
 ## 1️⃣ Executive Overview
 
-Provides a high-level snapshot of the entire business.
+### Purpose
 
-### Key KPIs
+Give senior management a **30-second overview of business performance**.
 
-* 💰 Total Revenue
-* 📈 Total Profit
-* 🛒 Total Units Sold
-* 📦 Inventory Value
-* 🔄 Inventory Turnover
-* ⚠️ Stock Risk
-* 🏪 Store Performance
+### KPIs
 
-### Visualizations
+```text
+💰 Total Revenue
+📈 Total Profit
+🛒 Units Sold
+📦 Inventory Value
+🔄 Inventory Turnover
+⚠️ Risk Products
+🏪 Store Performance
+```
+
+### Key Visuals
 
 * Revenue Trend
 * Profit Trend
 * Revenue by Category
+* Revenue by Region
 * Store Performance
-* Regional Performance
 * Inventory Health
 
 ---
 
-## 2️⃣ Sales & Business Performance
+# 2️⃣ 📈 Sales & Business Performance
 
-Focuses on sales trends and business growth.
+### Questions Answered
 
-### Analysis Includes
+* Which month generated the highest revenue?
+* Which category contributes most revenue?
+* Which store performs best?
+* Which region is declining?
+* What is the profit trend?
 
-* Monthly Revenue Trend
-* Monthly Profit Trend
-* Category Revenue
-* Store Revenue
-* Regional Revenue
-* Sales Growth
-* Profit Margin
-
-### Business Value
-
-Helps management identify:
-
-**Where sales are growing → Where sales are declining → Which categories drive revenue → Which locations require attention**
-
----
-
-## 3️⃣ Inventory Risk & Efficiency
-
-Focuses on inventory management.
-
-### Key Analysis
-
-* Overstock Products
-* Stockout Risk
-* Slow-Moving Products
-* Inventory Value
-* Inventory Turnover
-* Stock Level Analysis
-* Inventory Risk Classification
-
-### Risk Categories
-
-🔴 **Critical** → Immediate Action
-
-🟠 **Warning** → Monitor Closely
-
-🟢 **Healthy** → Maintain
-
-🔵 **Slow Moving** → Promote / Reduce
-
----
-
-## 4️⃣ Product Performance
-
-Provides detailed product-level insights.
-
-### Analysis Includes
-
-* Top Revenue Products
-* Top Profit Products
-* Low Performing Products
-* High Inventory + Low Sales
-* Product Profit Margin
-* Product Sales Quantity
-* Product Inventory Value
-
-### Executive Actions
-
-Based on the analysis, products can be categorized into:
+### Visuals
 
 ```text
-REORDER
-   ↓
-High Sales + Low Stock
-
-PROMOTE
-   ↓
-Good Product + Slow Sales
-
-REDUCE
-   ↓
-High Inventory + Low Sales
-
-MONITOR
-   ↓
-Moderate Risk
-
-DISCONTINUE
-   ↓
-Low Sales + Low Profit + High Inventory
+📈 Monthly Revenue Trend
+📊 Category Revenue
+🏪 Store Comparison
+🌍 Regional Performance
+💰 Profit Analysis
 ```
 
 ---
 
-# 📌 Important KPIs
+# 3️⃣ 📦 Inventory Risk & Efficiency
 
-| KPI                   | Purpose                               |
-| --------------------- | ------------------------------------- |
-| 💰 Total Revenue      | Measures overall sales value          |
-| 📈 Total Profit       | Measures business profitability       |
-| 📊 Profit Margin %    | Measures profitability efficiency     |
-| 🛒 Units Sold         | Measures sales volume                 |
-| 📦 Inventory Value    | Measures capital tied in inventory    |
-| 🔄 Inventory Turnover | Measures inventory efficiency         |
-| ⚠️ Stockout Risk      | Identifies products likely to run out |
-| 🐌 Slow-Moving Stock  | Identifies products with weak sales   |
-| 💸 Revenue at Risk    | Estimates potential revenue loss      |
-| 🏪 Store Performance  | Compares store-level business results |
+### Questions Answered
 
----
+* Which products are overstocked?
+* Which products are close to stockout?
+* Which products are slow-moving?
+* How much capital is tied in inventory?
+* Which products require immediate action?
 
-# 🔍 Data Analytics Workflow
+### Risk Classification
 
-### Step 1 — Data Collection
-
-Raw retail sales and inventory data is collected.
-
-⬇️
-
-### Step 2 — Data Cleaning
-
-Using Excel:
-
-* Remove duplicates
-* Handle missing values
-* Correct data types
-* Standardize dates
-* Validate numeric fields
-* Check inconsistent records
-
-⬇️
-
-### Step 3 — SQL Database
-
-Cleaned data is imported into MySQL.
-
-SQL is used for:
-
-* Data filtering
-* Aggregation
-* Joins
-* KPI calculations
-* Business analysis
-
-⬇️
-
-### Step 4 — Statistical Analysis
-
-Business data is analyzed using statistical techniques to identify:
-
-* Trends
-* Variations
-* Performance gaps
-* Relationships between metrics
-
-⬇️
-
-### Step 5 — Power BI
-
-The processed data is connected to Power BI.
-
-Power Query is used for additional transformation and DAX is used to create business measures.
-
-⬇️
-
-### Step 6 — Executive Dashboard
-
-Interactive dashboards convert analytical results into actionable business insights.
+| Status         | Meaning            | Recommended Action    |
+| -------------- | ------------------ | --------------------- |
+| 🔴 Critical    | Immediate risk     | Take immediate action |
+| 🟠 Warning     | Potential risk     | Monitor closely       |
+| 🟢 Healthy     | Good inventory     | Maintain              |
+| 🔵 Slow Moving | Low sales velocity | Promote / Reduce      |
 
 ---
 
-# 🧮 Example DAX Measures
+# 4️⃣ 🏷️ Product Performance
+
+This page provides product-level intelligence.
+
+### Analysis
+
+```text
+🏆 Top Revenue Products
+💰 Top Profit Products
+📦 High Inventory Products
+🐌 Slow-Moving Products
+⚠️ Stockout Risk Products
+📊 Product Profit Margin
+```
+
+### Decision Matrix
+
+```text
+                     SALES
+                LOW          HIGH
+             ┌──────────┬──────────┐
+        HIGH │  REDUCE  │ REORDER  │
+             │    📦    │    🔄    │
+INVENTORY    ├──────────┼──────────┤
+        LOW  │ PROMOTE  │ HEALTHY  │
+             │    📢    │    🟢    │
+             └──────────┴──────────┘
+```
+
+---
+
+# 💡 Executive Decision Engine
+
+The dashboard does not stop at visualization.
+
+It converts insights into **recommended business actions**.
+
+```text
+              PRODUCT ANALYSIS
+                     │
+          ┌──────────┼──────────┐
+          ▼          ▼          ▼
+       SALES      STOCK       PROFIT
+          │          │          │
+          └──────────┼──────────┘
+                     ▼
+              RISK ANALYSIS
+                     │
+                     ▼
+            BUSINESS DECISION
+                     │
+       ┌─────────────┼─────────────┐
+       ▼             ▼             ▼
+    🔄 REORDER    📢 PROMOTE    📦 REDUCE
+```
+
+---
+
+# 🧮 Key Business Metrics
 
 ### Total Revenue
 
-```DAX
-Total Revenue =
-SUM(Sales[Revenue])
+```text
+Revenue = Quantity Sold × Selling Price
 ```
 
-### Total Profit
+### Profit
 
-```DAX
-Total Profit =
-SUM(Sales[Profit])
+```text
+Profit = Revenue − Total Cost
 ```
 
 ### Profit Margin
 
-```DAX
+```text
 Profit Margin % =
-DIVIDE(
-    [Total Profit],
-    [Total Revenue],
-    0
-)
-```
-
-### Total Units Sold
-
-```DAX
-Total Units Sold =
-SUM(Sales[Quantity])
+(Profit / Revenue) × 100
 ```
 
 ### Inventory Value
 
-```DAX
+```text
 Inventory Value =
-SUMX(
-    Inventory,
-    Inventory[Stock Quantity] *
-    Inventory[Unit Cost]
-)
+Current Stock × Unit Cost
 ```
 
-> These measures are examples of the business logic used to create executive KPIs.
+### Inventory Turnover
+
+```text
+Inventory Turnover =
+Cost of Goods Sold / Average Inventory
+```
 
 ---
 
-# 🎨 Dashboard Design Philosophy
+# 📐 Statistical Analysis
 
-The dashboard follows an **executive-first design approach**.
+Statistics is used to understand the behavior and performance of the business.
 
-### Design Principles
+### Techniques
 
-* 🎯 KPI-first layout
-* 📊 Minimal visual clutter
-* 🔎 Easy filtering
-* 🧭 Clear navigation
-* 🎨 Consistent color coding
-* 📱 Business-focused visual hierarchy
-* ⚡ Quick decision-making
+* Mean
+* Median
+* Standard Deviation
+* Variance
+* Trend Analysis
+* Correlation
+* Performance Distribution
+* Comparative Analysis
 
-### Risk Color Standards
+### Example
 
-| Status         | Color  | Meaning                  |
-| -------------- | ------ | ------------------------ |
-| 🔴 Critical    | Red    | Immediate Action         |
-| 🟠 Warning     | Orange | Monitor                  |
-| 🟢 Healthy     | Green  | Maintain                 |
-| 🔵 Slow Moving | Blue   | Promote / Reduce         |
-| 🟣 Normal      | Purple | General Business Metrics |
+Correlation analysis can help investigate relationships such as:
+
+```text
+Sales Volume
+      ↕
+Inventory Level
+
+Sales Volume
+      ↕
+Revenue
+
+Revenue
+      ↕
+Profit
+```
 
 ---
 
-# 📂 Project Structure
+# 🗄️ SQL Analysis
+
+SQL is used to extract business insights from the relational database.
+
+### Example Business Questions
+
+```sql
+-- Top revenue-generating products
+
+SELECT
+    Product_ID,
+    SUM(Revenue) AS Total_Revenue
+FROM FACT_SALES
+GROUP BY Product_ID
+ORDER BY Total_Revenue DESC;
+```
+
+```sql
+-- Store performance
+
+SELECT
+    Store_ID,
+    SUM(Revenue) AS Revenue,
+    SUM(Profit) AS Profit
+FROM FACT_SALES
+GROUP BY Store_ID
+ORDER BY Revenue DESC;
+```
+
+---
+
+# 📊 Power BI Data Model
+
+The Power BI model follows a **fact-and-dimension architecture**.
+
+```text
+                   DIM_DATE
+                      │
+                      │
+                      ▼
+DIM_CATEGORY ──► DIM_PRODUCT ◄── DIM_STORE ◄── DIM_REGION
+                      │              │
+                      │              │
+              ┌───────┴───────┐      │
+              ▼               ▼      │
+         FACT_SALES      FACT_INVENTORY
+```
+
+### Fact Tables
+
+📊 `FACT_SALES`
+
+📦 `FACT_INVENTORY`
+
+### Dimension Tables
+
+📅 `DIM_DATE`
+
+🏷️ `DIM_PRODUCT`
+
+📂 `DIM_CATEGORY`
+
+🏪 `DIM_STORE`
+
+🌍 `DIM_REGION`
+
+---
+
+# 📁 Repository Structure
 
 ```text
 Executive-Business-Intelligence-Dashboard/
@@ -453,191 +664,215 @@ Executive-Business-Intelligence-Dashboard/
 │
 ├── 📁 sql/
 │   ├── database_schema.sql
+│   ├── table_creation.sql
 │   └── analysis_queries.sql
 │
 ├── 📁 powerbi/
 │   └── Executive_BI_Dashboard.pbix
 │
 ├── 📁 screenshots/
-│   ├── executive_overview.png
-│   ├── sales_analysis.png
-│   ├── inventory_risk.png
-│   └── product_performance.png
+│   ├── dashboard-demo.gif
+│   ├── executive-overview.png
+│   ├── sales-analysis.png
+│   ├── inventory-risk.png
+│   └── product-performance.png
 │
-└── 📁 documentation/
-    ├── problem_statement.md
-    └── project_documentation.md
+├── 📁 documentation/
+│   ├── problem_statement.md
+│   ├── data_dictionary.md
+│   ├── data_model.md
+│   └── project_documentation.md
+│
+└── 📁 assets/
+    └── dashboard-banner.gif
 ```
 
 ---
 
-# 💡 Key Business Insights
+# 🔐 Data & Security
 
-The dashboard helps executives quickly identify:
+Sensitive information should **never** be committed to the repository.
 
-### 💰 Revenue Opportunities
-
-Identify products, categories, stores, and regions generating the highest revenue.
-
-### 📦 Inventory Problems
-
-Detect products where inventory is high but sales are low.
-
-### ⚠️ Stockout Risks
-
-Identify products with low stock and strong sales demand.
-
-### 🐌 Slow-Moving Inventory
-
-Find products occupying warehouse capital without sufficient sales.
-
-### 📈 Growth Opportunities
-
-Identify high-performing categories and locations that can be expanded.
-
-### 💸 Revenue Leakage
-
-Identify products and business areas where potential revenue is being lost.
-
----
-
-# 🎯 Business Impact
-
-This project transforms raw retail data into a **decision-support system**.
-
-### Without the Dashboard
+Do not upload:
 
 ```text
-Raw Data
-   ↓
-Multiple Excel Files
-   ↓
-Manual Analysis
-   ↓
-Delayed Decisions
+❌ Passwords
+❌ API Keys
+❌ Database Credentials
+❌ .env files
+❌ Private Business Data
 ```
 
-### With the Dashboard
+Use:
 
 ```text
-Retail Data
-    ↓
-Clean & Structured Data
-    ↓
-SQL + Statistics
-    ↓
-Power BI
-    ↓
-Interactive Insights
-    ↓
-Faster Executive Decisions
+.gitignore
+.env.example
 ```
 
----
-
-# 👔 Target End Users
-
-The dashboard is designed for:
-
-* 👨‍💼 Business Managers
-* 👩‍💼 Store Managers
-* 📦 Inventory Managers
-* 💰 Finance Teams
-* 📊 Business Analysts
-* 🏢 Regional Managers
-* 👔 Senior Management
-* 🎯 Executive Decision Makers
+for sensitive configuration.
 
 ---
 
 # 🚀 Future Enhancements
 
-The project can be extended with:
+The project can evolve from traditional BI into an **AI-powered Retail Intelligence Platform**.
 
-* 🤖 Machine Learning-based demand forecasting
-* 📅 Future inventory prediction
-* 🔮 Stockout prediction
-* 💰 Revenue forecasting
-* 🧠 AI-generated business recommendations
-* 🔔 Automated inventory alerts
-* ☁️ Cloud-based data integration
-* 📱 Mobile-friendly dashboard
-* ⚡ Real-time inventory monitoring
-
----
-
-# 📚 Skills Demonstrated
-
-This project demonstrates practical knowledge of:
+### 🔮 Planned Features
 
 ```text
-Excel
-  ↓
-Data Cleaning
-  ↓
-SQL
-  ↓
-Statistics
-  ↓
-Power Query
-  ↓
-Data Modeling
-  ↓
-DAX
-  ↓
-Power BI
-  ↓
-Business Intelligence
-  ↓
-Executive Decision Making
+🤖 Demand Forecasting
+        ↓
+📦 Future Inventory Prediction
+        ↓
+⚠️ Stockout Prediction
+        ↓
+💰 Revenue Forecasting
+        ↓
+🧠 AI Recommendations
+        ↓
+🔔 Automated Alerts
+        ↓
+☁️ Cloud Deployment
 ```
+
+Potential future additions:
+
+* Machine Learning demand forecasting
+* Stockout prediction
+* Revenue forecasting
+* AI-generated recommendations
+* Automated inventory alerts
+* Real-time dashboards
+* Cloud database integration
+* Natural-language business queries
 
 ---
 
 # 🏆 Project Highlights
 
-✨ End-to-end Business Intelligence project
-
-📊 Interactive Power BI dashboard
-
-🗄️ SQL-based data analysis
-
-📈 Statistical business analysis
-
-📦 Inventory risk management
-
-💰 Revenue & profitability analysis
-
-🏪 Store & regional performance analysis
-
-🎯 Executive decision-support system
+| Area                | Implementation                     |
+| ------------------- | ---------------------------------- |
+| 📊 Data Cleaning    | Excel / Power Query                |
+| 🗄️ Database        | MySQL                              |
+| 🔍 Data Analysis    | SQL                                |
+| 📐 Statistics       | Descriptive & comparative analysis |
+| 🧩 Data Modeling    | Star Schema                        |
+| 📈 Visualization    | Power BI                           |
+| 🧮 Calculations     | DAX                                |
+| 📦 Inventory        | Risk & efficiency analysis         |
+| 💰 Profitability    | Revenue & profit analysis          |
+| 🎯 Decision Support | Executive recommendations          |
 
 ---
 
-# 👨‍💻 Author
+# 👔 Target Users
 
-### **Mukesh N**
+### 🧑‍💼 Business Managers
 
-🎓 B.Sc Computer Science
+Monitor overall business performance.
+
+### 📦 Inventory Managers
+
+Identify overstock, slow-moving, and stockout-risk products.
+
+### 🏪 Store Managers
+
+Compare store performance and identify improvement areas.
+
+### 📊 Business Analysts
+
+Perform detailed analysis and identify trends.
+
+### 👔 Executives
+
+Get a high-level overview for strategic decision-making.
+
+---
+
+# 🌍 Real-World Business Impact
+
+### Before
+
+```text
+📁 Multiple Data Sources
+        ↓
+📊 Manual Excel Reports
+        ↓
+⏳ Time-Consuming Analysis
+        ↓
+❓ Difficult Decisions
+```
+
+### After
+
+```text
+📊 Integrated Data
+        ↓
+🗄️ Structured Database
+        ↓
+📈 Automated Analytics
+        ↓
+🎯 Interactive Dashboard
+        ↓
+⚡ Faster Decisions
+```
+
+---
+
+# 📌 Final Outcome
+
+The **Executive Business Intelligence Dashboard** provides a centralized view of:
+
+> **Sales Performance + Inventory Efficiency + Product Performance + Profitability + Business Risk**
+
+It helps decision-makers move from:
+
+### ❌ "What happened?"
+
+to
+
+### ✅ "Why did it happen?"
+
+and finally to
+
+### 🚀 "What should we do next?"
+
+---
+
+# 👨‍💻 About the Developer
+
+## Mukesh N
+
+🎓 **B.Sc Computer Science**
 
 📍 Coimbatore, Tamil Nadu
 
-💡 Aspiring Data Analyst / Business Intelligence Analyst
+💼 Aspiring **Data Analyst / Business Intelligence Analyst**
 
-### Core Skills
+### Skills
 
-`Excel` • `SQL` • `Power BI` • `Python` • `Statistics` • `Data Analytics`
+```text
+📊 Excel
+🗄️ SQL
+🐬 MySQL
+📈 Power BI
+🐍 Python
+📐 Statistics
+📊 Data Analytics
+💡 Business Intelligence
+```
 
 ---
 
-# ⭐ If You Find This Project Interesting
+# ⭐ Project
 
-If this project helped you understand how **data analytics can support real-world retail decision making**, consider giving the repository a ⭐.
-
----
+If you find this project useful or interesting, consider giving the repository a ⭐.
 
 <p align="center">
 
-### 📊 From Data → Insights → Decisions → Business Growth 🚀
+### 🚀 DATA → INSIGHTS → DECISIONS → BUSINESS GROWTH
+
+**Built with 📊 Data Analytics + 🧠 Business Intelligence + 🎯 Executive Thinking**
 
 </p>
