@@ -32,32 +32,6 @@
 
 ---
 
-# 🎬 Dashboard Preview
-
-> 📌 Add your Power BI dashboard GIF/image inside the `screenshots` folder.
-
-```text
-screenshots/
-│
-├── dashboard-demo.gif
-├── executive-overview.png
-├── sales-analysis.png
-├── inventory-risk.png
-└── product-performance.png
-```
-
-Once uploaded, add:
-
-```markdown
-<p align="center">
-<img src="screenshots/dashboard-demo.gif" width="950">
-</p>
-```
-
-This creates an animated dashboard preview at the top of your GitHub README.
-
----
-
 # 🧠 Business Problem
 
 Retail companies generate large amounts of **sales, product, inventory, store, and category data**.
